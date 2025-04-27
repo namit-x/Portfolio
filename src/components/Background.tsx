@@ -14,7 +14,7 @@ const Background = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles = Array.from({ length: 30 }, () => ({
+    const particles = Array.from({ length: 25 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       dx: Math.random() * 2 - 1,

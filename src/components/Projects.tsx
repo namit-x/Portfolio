@@ -44,7 +44,7 @@ const Projects = () => {
   const [showPractice, setShowPractice] = useState(false);
 
   return (
-    <section className="py-16 relative overflow-hidden ">
+    <section id='projects' className="py-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 flex flex-col overflow-hidden items-center">
         {/* Heading */}
         <div className='text-4xl overflow-hidden text-gradient my-4 font-bold'>

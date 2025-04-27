@@ -38,7 +38,7 @@ const Timeline = () => {
             <div className="flex flex-col sm:flex-row items-start group">
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <span className="font-bold">April 2009</span>
-                <div>Entered Kindergarten.</div>
+                <div>Entered Kindergarten:)</div>
                 <div className="text-gray-400">Peak of my academic career (so far).</div>
               </div>
               <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rounded-full mt-2 border-2 border-gradient" />

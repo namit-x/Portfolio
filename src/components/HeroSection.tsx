@@ -100,9 +100,9 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce p-2 sm:p-4 hover:bg-gray-200/10 rounded-full hover:cursor-pointer transition-all duration-300 ease-in-out">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce p-2 sm:p-4 hover:bg-white rounded-full hover:cursor-pointer transition-all duration-300 ease-in-out">
         <a href="#about" aria-label="Scroll down">
-          <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+          <ArrowDown className="h-5 w-5 sm:h-8 sm:w-8 text-primary" />
         </a>
       </div>
     </section>
