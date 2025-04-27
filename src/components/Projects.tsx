@@ -13,13 +13,13 @@ const mainProjects = [
     title: "Fork and Find",
     description: "A comprehensive food information website that fetches data through RESTful APIs from openfoodfacts.org",
     imageUrl: "/ForkAndFind.png",
-    link: "#"
+    link: "https://github.com/namit-x/Find-Fork"
   },
   {
     title: "Shoporia",
     description: "A modern e-commerce platform offering a seamless shopping experience with intuitive navigation and secure transactions.",
     imageUrl: "/image.png",
-    link: "#"
+    link: "https://github.com/namit-x/P2_Shoporia"
   }
 ];
 
@@ -28,14 +28,14 @@ const practiceProjects = [
     title: "Todo App",
     description: "A feature-rich todo application with task management, categories, and progress tracking.",
     imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    link: "#",
+    link: "https://github.com/namit-x/TodoApp",
     isPractice: true
   },
   {
     title: "Quizzo",
     description: "An interactive quiz application with multiple categories, timer functionality, and score tracking.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    link: "#",
+    link: "https://github.com/namit-x/Quizzo",
     isPractice: true
   }
 ];
