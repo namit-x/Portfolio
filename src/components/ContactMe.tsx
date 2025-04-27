@@ -13,10 +13,14 @@ const ContactMe = () => {
             <span className="text-gradient">Contact Me</span>
           </h1>
 
-          <div className="bg-[#1E1E2F]/90 rounded-xl p-6 sm:p-8 shadow-xl border border-purple-500/30 transform hover:scale-[1.02] transition-all duration-500">
+          <div className="bg-[#1E1E2F]/90 rounded-xl p-6 sm:p-8 shadow-xl border-2 border-purple-500/30 hover:border-purple-500 transform hover:scale-[1.02] transition-all duration-500">
             <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 leading-relaxed">
               I'm a passionate developer with expertise in creating beautiful and functional web applications.
               From architectural visualizations to e-commerce solutions, I bring creative ideas to life through code.
+            </p>
+
+            <p className="text-base sm:text-sm md:text-base text-white mb-6 sm:mb-8 leading-relaxed">
+            I code things that work (mostly). Serious about building🏛️, Not so serious about everything else👨‍💻
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 py-4">

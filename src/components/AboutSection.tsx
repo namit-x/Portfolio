@@ -6,22 +6,22 @@ export default function AboutSection() {
     {
       icon: <Code className="h-6 w-6" color="white" />,
       title: "Web Developer",
-      description: "Building responsive and performant web applications"
+      description: "Building websites that move fast and look good on any device — no matter how many tabs you have open.💻"
     },
     {
       icon: <LaptopMinimal className="h-6 w-6" color="white" />,
       title: "Freelancer",
-      description: "Delivering high-quality solutions to diverse clients"
+      description: "Delivering high-quality solutions to clients"
     },
     {
       icon: <Users className="h-6 w-6" color="white" />,
       title: "Orator",
-      description: "Effective communication and presentation skills"
+      description: "I can speak code and I know how to make it sound good. Presentation skills, on point. 💬"
     },
     {
       icon: <Book className="h-6 w-6" color="white" />,
       title: "Student",
-      description: "Pursuing academic excellence with maintaining a GPA of 9.06"
+      description: "Academically grinding with a 9.06 GPA — because who says you can’t code and study? 📖"
     }
   ];
 
@@ -38,7 +38,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="space-y-6">
             <h3 className="text-xl sm:text-2xl font-semibold">
-              Full-Stack Developer. Curious Mind. Coffee-Fueled Coder.
+            Full-Stack Developer. Curious Mind. <br />Powered by Coffee & Ambition. ☕💡
             </h3>
             <p className="text-muted-foreground text-sm sm:text-base">
               Hey! I'm Namit — a 2nd-year student at Jain University, Bengaluru, currently juggling a CGPA of 9.06, daily gym sessions, freelance gigs, and late-night coding marathons. I build clean, responsive, and user-friendly web applications that not only look good but work exactly how users expect (and clients love).
@@ -78,7 +78,7 @@ export default function AboutSection() {
                   {card.icon}
                 </div>
                 <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
-                <p className="text-muted-foreground text-sm sm:text-base text-white">
+                <p className="text-muted-foreground text-[12px] sm:text-base text-white">
                   {card.description}
                 </p>
               </div>
