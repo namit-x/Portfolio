@@ -18,20 +18,14 @@ const Timeline = () => {
             {/* 2006 */}
             <div className="flex flex-col sm:flex-row items-start group">
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
-                <div className="hidden sm:block">
+              <div className="sm:hidden">
                   <span className="font-bold">January 2006</span>
                   <div>Successfully Born</div>
                   <div>Rohtak, Haryana</div>
                 </div>
               </div>
               <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rounded-full mt-2 border-2 border-gradient" />
-              <div className="flex-1 sm:pl-8">
-                <div className="sm:hidden">
-                  <span className="font-bold">January 2006</span>
-                  <div>Successfully Born</div>
-                  <div>Rohtak, Haryana</div>
-                </div>
-              </div>
+              <div className="flex-1 sm:pl-8"></div>
             </div>
 
             {/* 2009 */}
