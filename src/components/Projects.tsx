@@ -44,8 +44,8 @@ const Projects = () => {
   const [showPractice, setShowPractice] = useState(false);
 
   return (
-    <section className="py-16 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center">
+    <section className="py-16 relative overflow-hidden ">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col overflow-hidden items-center">
         {/* Heading */}
         <div className='text-4xl overflow-hidden text-gradient my-4 font-bold'>
           <div className='overflow-hidden mb-2 text-center'>Projects</div>
@@ -62,17 +62,17 @@ const Projects = () => {
         {/* Show practice Button */}
         <div className="text-center mb-8 overflow-hidden w-[300px] transition-all duration-300">
           <button
-            onClick={() => {
-              setShowPractice(!showPractice);
-              console.log(`${window.innerWidth} X ${window.innerHeight}`);
-            }}
+            onClick={() => { setShowPractice(!showPractice); }}
             className={cn(
-              "bg-gradient text-white px-8 py-3 rounded-lg transition-all duration-300 ease-in-out",
-              "transform hover:scale-105 transition-all duration-300 font-medium hover:rounded-full"
+              "bg-gradient text-white px-8 py-3 transition-all duration-300 ease-in-out",
+              "transform hover:scale-105 transition-all duration-300 font-medium",
+              "rounded-lg transition-all duration-300 ease-in-out",
+              "text-transition duration-300"
             )}
           >
             {showPractice ? 'Hide Practice Projects' : 'Show Practice Projects'}
           </button>
+
         </div>
 
         {showPractice && (
