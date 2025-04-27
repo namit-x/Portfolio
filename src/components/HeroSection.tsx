@@ -9,7 +9,7 @@ export default function HeroSection() {
   const [mee, setMee] = useState("Namit");
   const [animating, setAnimating] = useState(false);
   const [text] = useTypewriter({
-    words: [`Hey! I'm a student who loves building websites — because who needs sleep when you can make something look good and work even better? I turn ideas into user-friendly web experiences, and I’m constantly finding new ways to make the web better... or at least less annoying. 😏`],
+    words: [`Hey! I'm a student who loves building websites — because building websites is way more fun than watching Netflix... and way more rewarding, too😏 I turn ideas into user-friendly web experiences, and I’m constantly finding new ways to make the web better... or at least less annoying. `],
     typeSpeed: 40,
   });
 
