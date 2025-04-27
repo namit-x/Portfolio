@@ -1,5 +1,3 @@
-import { cn } from "../lib/utils";
-
 const Timeline = () => {
   return (
     <div className="w-full px-4 py-16 sm:px-6 lg:px-8">
