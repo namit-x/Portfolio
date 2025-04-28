@@ -20,7 +20,7 @@ const Timeline = () => {
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <div className="sm:hidden">
                   <span className="font-bold">January 2006</span>
-                  <div>Made my entrance into the world</div>
+                  <div>✨ Spawned into existence.</div>
                   <div className="text-gray-400">Rohtak, Haryana</div>
                 </div>
               </div>
@@ -28,7 +28,7 @@ const Timeline = () => {
               <div className="flex-1 sm:pl-8">
                 <div className="hidden sm:block">
                   <span className="font-bold">January 2006</span>
-                  <div>Made my entrance into the world</div>
+                  <div>✨ Spawned into existence.</div>
                   <div className="text-gray-400">Rohtak, Haryana</div>
                 </div>
               </div>
@@ -38,7 +38,7 @@ const Timeline = () => {
             <div className="flex flex-col sm:flex-row items-start group">
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <span className="font-bold">April 2009</span>
-                <div>Entered Kindergarten:)</div>
+                <div>🎒Entered Kindergarten:)</div>
                 <div className="text-gray-400">Peak of my academic career (so far).</div>
               </div>
               <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rounded-full mt-2 border-2 border-gradient" />
@@ -50,7 +50,7 @@ const Timeline = () => {
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <div className="sm:hidden">
                   <span className="font-bold">April 2011</span>
-                  <div>Upgraded to "real" school life</div>
+                  <div>Upgraded to "real" school life🏫</div>
                   <div className="text-gray-400">MDN Public School, Rohtak</div>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const Timeline = () => {
               <div className="flex-1 sm:pl-8">
                 <div className="hidden sm:block">
                   <span className="font-bold">April 2011</span>
-                  <div>Upgraded to "real" school life</div>
+                  <div>Upgraded to "real" school life🏫</div>
                   <div className="text-gray-400">MDN Public School, Rohtak</div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const Timeline = () => {
             <div className="flex flex-col sm:flex-row items-start group">
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <span className="font-bold">May 2023</span>
-                <div>Escaped school with 89.4%</div>
+                <div>Escaped school🎓 with 89.4%</div>
                 <div className="text-gray-400">MDN Public School, Rohtak</div>
               </div>
               <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rounded-full mt-2 border-2 border-gradient" />
@@ -80,7 +80,7 @@ const Timeline = () => {
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <div className="sm:hidden">
                   <span className="font-bold">August 2023</span>
-                  <div>Leveled up: Started College</div>
+                  <div>🚀Leveled up: Started College</div>
                   <div className="text-gray-400">Jain University, Bengaluru</div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const Timeline = () => {
               <div className="flex-1 sm:pl-8">
                 <div className="hidden sm:block">
                   <span className="font-bold">August 2023</span>
-                  <div>Leveled up: Started College</div>
+                  <div>🚀Leveled up: Started College</div>
                   <div className="text-gray-400">Jain University, Bengaluru</div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Timeline = () => {
             <div className="flex flex-col sm:flex-row items-start group">
               <div className="flex-1 sm:text-right sm:pr-8 ml-12 sm:ml-0">
                 <span className="font-bold">June 2024</span>
-                <div>Decided to break the internet</div>
+                <div>Decided to break🛠️ the internet</div>
                 <div className="text-gray-400">(or at least learn Web Dev)</div>
               </div>
               <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rounded-full mt-2 border-2 border-gradient" />

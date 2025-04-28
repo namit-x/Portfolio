@@ -52,7 +52,7 @@ export default function HeroSection() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in">
             <span
               className={clsx(
-                "text-white transition-all duration-900 block font-bold overflow-hidden",
+                "text-white transition-all duration-900 block font-bold overflow-hidden pb-2",
                 animating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               )}
             >
