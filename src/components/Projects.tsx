@@ -6,19 +6,19 @@ const mainProjects = [
   {
     title: "Architectural Portfolio",
     description: "A showcase of architectural designs, concepts, and completed projects demonstrating creativity and technical expertise in architecture.",
-    imageUrl: "/ArchitecturalPortfolio.png",
+    imageUrl: "/ArchitecturalPortfolio.webp",
     link: "https://www.studio65.in"
   },
   {
     title: "Fork and Find",
     description: "A comprehensive food information website that fetches data through RESTful APIs from openfoodfacts.org",
-    imageUrl: "/ForkAndFind.png",
+    imageUrl: "/ForkAndFind.webp",
     link: "https://github.com/namit-x/Find-Fork"
   },
   {
     title: "Shoporia",
     description: "A modern e-commerce platform offering a seamless shopping experience with intuitive navigation and secure transactions.",
-    imageUrl: "/image.png",
+    imageUrl: "/image.webp",
     link: "https://github.com/namit-x/P2_Shoporia"
   }
 ];
@@ -60,7 +60,6 @@ const Projects = () => {
             <ProjectCard key={index} {...project} />
           ))}
         </div>
-
 
         {/* Show practice Button */}
         <div className="text-center mb-8 overflow-hidden w-[300px] transition-all duration-300">
