@@ -51,7 +51,6 @@ const ContactMe = () => {
                   "transform hover:scale-105 group",
                   "animate-scale-in-out"
                 )
-                
                 }
               >
                 <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:animate-bounce" />

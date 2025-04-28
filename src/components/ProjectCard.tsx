@@ -43,7 +43,6 @@ const ProjectCard = ({ title, description, imageUrl, link, isPractice = false }:
           <div className={cn(
             "relative h-full p-6 flex flex-col justify-between z-10",
             "transition-opacity duration-500",
-            "animate-scale-in-out"
           )}>
             <div>
               <h3 className="text-2xl font-bold mb-2 text-white">
