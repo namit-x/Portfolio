@@ -51,7 +51,7 @@ const Projects = () => {
           <div className='overflow-hidden mb-2 text-center'>Projects</div>
           <div className="h-1 w-20 bg-white mx-auto rounded-full"></div>
         </div>
-          <div className='text-2xl overflow-hidden text-white my-2'>Made with ❤️ and Lots of 🍵</div>
+          <div className='text-2xl overflow-hidden text-white my-2'>Made with ❤️ and Lots of ☕</div>
           <div className='text-lg overflow-hidden text-gray-400'>These are some self-made websites (unless asking AI for syntax help counts) Handcrafted. Still human. Still worth it. 🚀</div>
 
         {/* Projects */}

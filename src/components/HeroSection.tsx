@@ -44,7 +44,7 @@ export default function HeroSection() {
       <div className="w-full max-w-[1000px] mx-auto">
         <div className="space-y-6 text-center overflow-y-hidden">
           {/* Greeting */}
-          <p className="text-gradient font-mono text-2xl sm:text-3xl md:text-4xl animate-fade-in overflow-hidden">
+          <p className="text-gradient font-mono text-2xl sm:text-3xl md:text-4xl animate-fade-in overflow-hidden w-[250px] m-auto">
             Hello, I'm
           </p>
 

@@ -38,7 +38,9 @@ const ContactMe = () => {
                 )}
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:animate-bounce" />
-                <span className="text-sm sm:text-base text-white">Get in Touch</span>
+                <span className="text-sm sm:text-base text-white">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=namitwork099%40gmail.com" target="_blank">Get in Touch</a>
+                </span>
               </a>
 
               <a
