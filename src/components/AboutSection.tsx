@@ -36,9 +36,9 @@ export default function AboutSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <div className="space-y-6">
+          <div className="space-y-6 text-justify">
             <h3 className="text-xl sm:text-2xl font-semibold">
-            Full-Stack Developer. Curious Mind. <br />Powered by Coffee & Ambition. ☕💡
+              Full-Stack Developer. Curious Mind. <br />Powered by Coffee & Ambition.
             </h3>
             <p className="text-muted-foreground text-sm sm:text-base">
               Hey! I'm Namit — a 2nd-year student at Jain University, Bengaluru, currently juggling a CGPA of 9.06, daily gym sessions, freelance gigs, and late-night coding marathons. I build clean, responsive, and user-friendly web applications that not only look good but work exactly how users expect (and clients love).
@@ -72,15 +72,17 @@ export default function AboutSection() {
             {cardInfo.map((card, index) => (
               <div
                 key={index}
-                className="bg-[#1E1E2F]/90 opacity-90 hover:border-2 backdrop-blur-md p-4 sm:p-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:rotate-3"
+                className="transform-gpu transition-transform duration-300 hover:scale-105 hover:rotate-2"
               >
-                <div className="border-2 mb-4 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gradient text-primary rounded-md transition-transform duration-300">
-                  {card.icon}
+                <div className="bg-[#1E1E2F]/90 backdrop-blur-md p-4 sm:p-6 rounded-xl border border-transparent hover:border-white/20 flex flex-col justify-between h-full min-h-[220px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 bg-gradient text-primary rounded-md">
+                    {card.icon}
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
+                  <p className="text-muted-foreground text-[12px] sm:text-base text-white">
+                    {card.description}
+                  </p>
                 </div>
-                <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
-                <p className="text-muted-foreground text-[12px] sm:text-base text-white">
-                  {card.description}
-                </p>
               </div>
             ))}
           </div>
