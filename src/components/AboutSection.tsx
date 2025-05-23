@@ -1,4 +1,4 @@
-import { Code, Book, Users, Download, LaptopMinimal } from "lucide-react";
+import { Code, Swords, Coffee, Download, LaptopMinimal } from "lucide-react";
 import { Button } from "./ui/button";
 
 export default function AboutSection() {
@@ -9,17 +9,17 @@ export default function AboutSection() {
       description: "Building websites that move fast and look good on any device — no matter how many tabs you have open.💻"
     },
     {
+      icon: <Swords className="h-6 w-6" color="white" />,
+      title: "Hustler",
+      description: "Well whose not hustler in this world? I'm just a hustler who loves to hustle."
+    },
+    {
+      icon: <Coffee  className="h-6 w-6" color="white" />,
+      title: "Easy",
+      description: "I make my life easy by using shadcn/ui components, like I did in the top left corner of this rotated square"
+    },
+    {
       icon: <LaptopMinimal className="h-6 w-6" color="white" />,
-      title: "Freelancer",
-      description: "Delivering high-quality solutions to clients"
-    },
-    {
-      icon: <Users className="h-6 w-6" color="white" />,
-      title: "Orator",
-      description: "I can speak code and I know how to make it sound good. Presentation skills, on point. 💬"
-    },
-    {
-      icon: <Book className="h-6 w-6" color="white" />,
       title: "Student",
       description: "Academically grinding with a 9.06 GPA — because who says you can’t code and study? 📖"
     }
@@ -75,13 +75,15 @@ export default function AboutSection() {
                 className="transform-gpu transition-transform duration-300 hover:scale-105 hover:rotate-2"
               >
                 <div className="bg-[#1E1E2F]/90 backdrop-blur-md p-4 sm:p-6 rounded-xl border border-transparent hover:border-white/20 flex flex-col justify-between h-full min-h-[220px]">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 bg-gradient text-primary rounded-md">
-                    {card.icon}
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 bg-gradient text-primary rounded-md">
+                      {card.icon}
+                    </div>
+                    <h4 className="text-xl sm:text-2xl font-semibold mb-2">{card.title}</h4>
                   </div>
-                  <h4 className="text-lg sm:text-xl font-semibold mb-2">{card.title}</h4>
-                  <p className="text-muted-foreground text-[12px] sm:text-base text-white">
-                    {card.description}
-                  </p>
+                    <p className="text-muted-foreground text-[12px] sm:text-base text-white">
+                      {card.description}
+                    </p>
                 </div>
               </div>
             ))}
