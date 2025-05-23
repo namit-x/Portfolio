@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { useTypewriter } from "react-simple-typewriter";
 import { Icon } from '@iconify/react';
-import { SiGraphql } from 'react-icons/si';
 
 export default function HeroSection() {
   const [mee, setMee] = useState("Namit");
