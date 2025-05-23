@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { useTypewriter } from "react-simple-typewriter";
 import { Icon } from '@iconify/react';
+import { SiGraphql } from 'react-icons/si';
 
 export default function HeroSection() {
   const [mee, setMee] = useState("Namit");
@@ -20,6 +21,7 @@ export default function HeroSection() {
     { name: 'Git', icon: 'logos:git-icon' },
     { name: 'GitHub', icon: 'octicon:mark-github-16' },
     { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+    { name: 'GraphQL', icon: 'logos:graphql' },
   ];
 
   const tittles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Freelancer", "Undergrad", "Namit"];
