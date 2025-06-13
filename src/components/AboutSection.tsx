@@ -44,10 +44,13 @@ export default function AboutSection() {
               Hey! I'm Namit — a 2nd-year student at Jain University, Bengaluru, currently juggling a CGPA of 9.06, daily gym sessions, freelance gigs, and late-night coding marathons. I build clean, responsive, and user-friendly web applications that not only look good but work exactly how users expect (and clients love).
             </p>
             <p className="text-muted-foreground text-sm sm:text-base">
+            When I’m not coding, you’ll find me on stage hosting college fests or speaking at events — because debugging JavaScript and grabbing a mic both come naturally to me.
+            </p>
+            <p className="text-muted-foreground text-sm sm:text-base">
               My toolkit includes React.js, Node.js, Express.js, TypeScript, Redux, GraphQL, RESTful APIs, and Tailwind CSS — backed by tools like Git, GitHub, VS Code, ChatGPT, and Cursor AI. I love solving problems, optimizing user experience, and shipping things that work like magic.
             </p>
             <p className="text-muted-foreground text-sm sm:text-base">
-              I'm not just aiming for a job. I'm chasing challenges, learning fast, and building with intent. If that sounds like your vibe — let's talk.
+              I'm not just aiming for a job. I'm chasing challenges, learning fast, and building with intent. If that sounds like your vibe — <span className="text-white">let's talk💬</span>
             </p>
 
             <div className="pt-4 p-2">

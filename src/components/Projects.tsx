@@ -20,7 +20,13 @@ const mainProjects = [
     description: "A modern e-commerce platform offering a seamless shopping experience with intuitive navigation and secure transactions.",
     imageUrl: "/image.webp",
     link: "https://github.com/namit-x/P2_Shoporia"
-  }
+  },
+  {
+    title: "OpenUp",
+    description: "A scalable mental wellness platform enabling users to discover therapists, schedule sessions, and connect via secure, real-time video — all online, with a focus on privacy and user experience.",
+    imageUrl: "/OpenUp.webp",
+    link: "https://github.com/namit-x/OpenUp"
+  },
 ];
 
 const practiceProjects = [
@@ -55,7 +61,7 @@ const Projects = () => {
           <div className='text-lg overflow-hidden text-gray-400'>These are some self-made websites (unless asking AI for syntax help counts) Handcrafted. Still human. Still worth it. 🚀</div>
 
         {/* Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
           {mainProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
