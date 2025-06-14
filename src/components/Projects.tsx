@@ -29,6 +29,8 @@ const mainProjects = [
   },
 ];
 
+// here comes barely a comment
+
 const practiceProjects = [
   {
     title: "Todo App",
