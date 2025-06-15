@@ -1,4 +1,3 @@
-import { ArrowDown } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
@@ -9,7 +8,7 @@ export default function HeroSection() {
   const [mee, setMee] = useState("Namit");
   const [animating, setAnimating] = useState(false);
   const [text] = useTypewriter({
-    words: [`Hey, I’m Namit — a self-taught web developer who loves turning ideas into digital reality. This isn’t just a portfolio; it’s a snapshot of what I build, how I grow, and why I care. I don’t just write code — I speak to crowds, build projects and chase impact. Every line I write is driven by one goal: to make tech useful, usable, and unforgettable.`],
+    words: [`Hey, I’m Namit — a self-taught web developer who loves turning ideas into digital reality. This isn’t just a portfolio; it’s a snapshot of what I build, how I grow, and why I care. I don’t just write code — I speak to crowds, build projects and chase impact.`],
     typeSpeed: 40,
   });
 
@@ -42,18 +41,31 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 scroll-smooth">
-      <div className="w-full max-w-[1000px] mx-auto">
-        <div className="space-y-6 text-center overflow-y-hidden">
+      {/* Mobile Layout */}
+      <div className="flex flex-col lg:hidden items-center w-full max-w-4xl mx-auto space-y-8">
+        {/* Image Container for Mobile */}
+        <div className="flex justify-center animate-fade-in">
+          <div className="w-48 sm:w-56 md:w-64 rounded-full bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] p-[2px] transform hover:scale-105 transition-transform duration-500">
+            <img
+              src="/NamitAvatar.webp"
+              alt="Namit Avatar"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+
+        {/* Content Container for Mobile */}
+        <div className="w-full text-center space-y-6">
           {/* Greeting */}
-          <p className="text-gradient font-mono text-2xl sm:text-3xl md:text-4xl animate-fade-in overflow-hidden w-[250px] m-auto">
+          <p className="text-gradient font-mono text-xl sm:text-2xl md:text-3xl animate-fade-in">
             Hello, I'm
           </p>
-
+          
           {/* Name/Title Animation */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold animate-fade-in">
             <span
               className={clsx(
-                "text-white transition-all duration-900 block font-bold overflow-hidden pb-2",
+                "text-white transition-all duration-500 block font-bold",
                 animating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               )}
             >
@@ -61,28 +73,28 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          {/* Typewriter Text */}
-          <div className="min-h-[120px] sm:min-h-[100px] px-4 sm:px-8 md:px-12">
-            <p className="text-base sm:text-base md:text-lg font-mono text-gray-400">
+          {/* Typewriter Text - Fixed width container */}
+          <div className="w-full min-h-[140px] sm:min-h-[120px] px-2 sm:px-4">
+            <p className="text-sm sm:text-base font-mono text-gray-400 leading-relaxed">
               {text}
-              <span className="animate-blink text-white">|</span>
+              <span className="animate-pulse text-white">|</span>
             </p>
           </div>
 
           {/* Tech Stack Icons */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 p-4 sm:p-6">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 p-4">
             {techList.map((tech) => (
               <div
                 key={tech.name}
                 className="flex flex-col items-center transform hover:scale-110 transition-transform duration-200"
               >
-                <Icon icon={tech.icon} className="w-8 h-8 sm:w-10 sm:h-10" />
+                <Icon icon={tech.icon} className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
             ))}
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in mt-8 px-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in mt-6 px-2">
             <Button
               className="rounded-md bg-gradient hover:text-gradient hover:bg-white border-0 border-transparent hover:border-white transition-all duration-500 ease-in-out w-full sm:w-auto"
               size="lg"
@@ -101,11 +113,76 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce p-2 sm:p-4 hover:bg-white rounded-full hover:cursor-pointer transition-all duration-300 ease-in-out">
-        <a href="#about" aria-label="Scroll down">
-          <ArrowDown className="h-2 w-2 sm:h-8 sm:w-8 text-primary" />
-        </a>
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex items-center w-full max-w-7xl mx-auto overflow-hidden">
+        {/* Image Container for Desktop - Fixed positioning */}
+        <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden py-4">
+          <div className="w-60 xl:w-72 rounded-full bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] py-[3px] transform hover:scale-105 transition-transform duration-500">
+            <img
+              src="/NamitAvatar.webp"
+              alt="Namit Avatar"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+
+        {/* Content Container for Desktop - Fixed width */}
+        <div className="w-1/2 max-w-2xl space-y-6 overflow-hidden ">
+          {/* Greeting */}
+          <p className="text-gradient font-mono text-2xl xl:text-3xl animate-fade-in w-[180px]">
+            Hello, I'm
+          </p>
+
+          {/* Name/Title Animation */}
+          <h1 className="text-4xl xl:text-6xl font-bold animate-fade-in">
+            <span
+              className={clsx(
+                "text-white transition-all duration-500 block font-bold overflow-hidden py-2",
+                animating ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              )}
+            >
+              {mee}
+            </span>
+          </h1>
+
+          {/* Typewriter Text - Fixed dimensions to prevent layout shift */}
+          <div className="w-full h-32 xl:h-36 overflow-hidden">
+            <p className="text-base xl:text-lg font-mono text-gray-400 leading-relaxed">
+              {text}
+              <span className="animate-pulse text-white">|</span>
+            </p>
+          </div>
+
+          {/* Tech Stack Icons */}
+          <div className="flex flex-wrap gap-4 xl:gap-6 my-10 py-2">
+            {techList.map((tech) => (
+              <div
+                key={tech.name}
+                className="flex flex-col items-center transform hover:scale-110 transition-transform duration-200"
+              >
+                <Icon icon={tech.icon} className="w-8 h-8 xl:w-10 xl:h-10" />
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex gap-4 animate-fade-in mt-8">
+            <Button
+              className="rounded-md bg-gradient hover:text-gradient hover:bg-white border-0 border-transparent hover:border-white transition-all duration-500 ease-in-out"
+              size="lg"
+              asChild
+            >
+              <a href="#projects">View Projects</a>
+            </Button>
+            <Button
+              className="rounded-md border border-gradient hover:border-white text-white hover:text-gradient bg-black hover:bg-gradient font-bold transition-all duration-500 ease-in-out"
+              size="lg"
+              asChild
+            >
+              <a href="#contact">Contact Me</a>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

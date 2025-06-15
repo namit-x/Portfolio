@@ -29,8 +29,6 @@ const mainProjects = [
   },
 ];
 
-// here comes barely a comment
-
 const practiceProjects = [
   {
     title: "Todo App",
@@ -60,7 +58,7 @@ const Projects = () => {
           <div className="h-1 w-20 bg-white mx-auto rounded-full"></div>
         </div>
           <div className='text-2xl overflow-hidden text-white my-2'>Made with ❤️ and Lots of ☕</div>
-          <div className='text-lg overflow-hidden text-gray-400'>These are some self-made websites (unless asking AI for syntax help counts) Handcrafted. Still human. Still worth it. 🚀</div>
+          <div className='text-lg overflow-hidden text-gray-400 sm:text-sm'>These are some self-made websites (unless asking AI for syntax help counts) Handcrafted. Still human. Still worth it. 🚀</div>
 
         {/* Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">

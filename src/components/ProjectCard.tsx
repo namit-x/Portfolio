@@ -26,7 +26,7 @@ const ProjectCard = ({ title, description, imageUrl, link, isPractice = false }:
       )}>
         <div className="relative h-full">
           <div className={cn(
-            "absolute inset-0 transition-opacity duration-500",
+            "absolute inset-0 transition-opacity duration-500 border-2",
             isHovered ? "opacity-100" : "opacity-20"
           )}>
             <img
@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, imageUrl, link, isPractice = false }:
           <div className={cn(
             "absolute inset-0 bg-gradient-light opacity-10",
             "transition-opacity duration-500",
-            isHovered ? "opacity-0" : "opacity-95"
+            isHovered ? "opacity-0" : "opacity-35"
           )} />
           <div className={cn(
             "relative h-full p-6 flex flex-col justify-between z-10",
