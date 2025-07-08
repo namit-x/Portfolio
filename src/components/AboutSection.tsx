@@ -41,7 +41,7 @@ export default function AboutSection() {
               Full-Stack Developer. Curious Mind. <br />Powered by Coffee & Ambition.
             </h3>
             <p className="text-muted-foreground text-sm sm:text-base">
-              Hey! I'm Namit — a 2nd-year student at Jain University, Bengaluru, currently juggling a CGPA of 9.06, daily gym sessions, freelance gigs, and late-night coding marathons. I build clean, responsive, and user-friendly web applications that not only look good but work exactly how users expect (and clients love).
+              Hey! I'm Namit — a 3rd-year student at Jain University, Bengaluru, currently juggling a CGPA of 9.07, daily gym sessions, freelance gigs, and late-night coding marathons. I build clean, responsive, and user-friendly web applications that not only look good but work exactly how users expect (and clients love).
             </p>
             <p className="text-muted-foreground text-sm sm:text-base">
             When I’m not coding, you’ll find me on stage hosting college fests or speaking at events — because debugging JavaScript and grabbing a mic both come naturally to me.
