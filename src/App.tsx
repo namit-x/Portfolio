@@ -1,12 +1,13 @@
 import Background from './components/Background'
-function App() {
+import SmoothScroll from './components/SmoothScroll'
 
+function App() {
   return (
-    <div>
-      <div className='relative w-screen min-h-screen overflow-x-hidden custom-selection'>
+    <SmoothScroll>
+      <div className="relative w-screen min-h-screen overflow-x-hidden custom-selection">
         <Background />
       </div>
-    </div>
+    </SmoothScroll>
   )
 }
 
