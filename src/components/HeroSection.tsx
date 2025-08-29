@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react';
 export default function HeroSection() {
   const [mee, setMee] = useState("Namit");
   const [animating, setAnimating] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   const [text] = useTypewriter({
     words: [`Hey, I’m Namit — a self-taught web developer who loves turning ideas into digital reality. This isn’t just a portfolio; it’s a snapshot of what I build, how I grow, and why I care. I don’t just write code — I speak to crowds, build projects and chase impact.`],
     typeSpeed: 40,
@@ -43,14 +44,32 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 scroll-smooth">
       {/* Mobile Layout */}
       <div className="flex flex-col lg:hidden items-center w-full max-w-4xl mx-auto space-y-8">
-        {/* Image Container for Mobile */}
+        {/* Image Container for Mobile with Flip Animation */}
         <div className="flex justify-center animate-fade-in">
-          <div className="w-48 sm:w-56 md:w-64 rounded-full bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] p-[2px] transform hover:scale-105 transition-transform duration-500">
-            <img
-              src="/NamitAvatar.webp"
-              alt="Namit Avatar"
-              className="w-full h-full object-cover rounded-full"
-            />
+          <div 
+            className="w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 perspective-1000"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+          >
+            <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+              {/* Front of card (Avatar) */}
+              <div className="absolute w-full h-full backface-hidden rounded-full bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] p-[2px]">
+                <img
+                  src="/NamitAvatar.jpg"
+                  alt="Namit Avatar"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              
+              {/* Back of card (Real photo) */}
+              <div className="absolute w-full h-full backface-hidden rotate-y-180 rounded-full bg-[conic-gradient(from_90deg,#1d4ed8_0deg,#b91c1c_180deg,#1d4ed8_360deg)] p-[2px]">
+                <img
+                  src="/Namit.jpg"
+                  alt="Namit"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -115,14 +134,32 @@ export default function HeroSection() {
 
       {/* Desktop Layout */}
       <div className="hidden lg:flex items-center w-full max-w-7xl mx-auto overflow-hidden">
-        {/* Image Container for Desktop - Fixed positioning */}
-        <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden py-4">
-          <div className="w-60 xl:w-72 rounded-full bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] py-[3px] transform hover:scale-105 transition-transform duration-500">
-            <img
-              src="/NamitAvatar.webp"
-              alt="Namit Avatar"
-              className="w-full h-full object-cover rounded-full"
-            />
+        {/* Image Container for Desktop with Flip Animation */}
+        <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden">
+          <div 
+            className="w-60 xl:w-[350px] h-60 xl:h-[600px] perspective-1000 py-10 px-2 overflow-hidden"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+          >
+            <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+              {/* Front of card (Avatar) */}
+              <div className="absolute w-full h-full backface-hidden rounded-xl bg-[conic-gradient(from_90deg,#b91c1c_0deg,#1d4ed8_180deg,#b91c1c_360deg)] p-[2px]">
+                <img
+                  src="/NamitAvatar.webp"
+                  alt="Namit Avatar"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              
+              {/* Back of card (Real photo) */}
+              {/* <div className="absolute w-full h-full backface-hidden rotate-y-180 rounded-xl bg-[conic-gradient(from_90deg,#1d4ed8_0deg,#b91c1c_180deg,#1d4ed8_360deg)] p-[2px]">
+                <img
+                  src="/NamitAvatar.jpg"
+                  alt="Namit"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div> */}
+            </div>
           </div>
         </div>
 
@@ -184,6 +221,22 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Add custom CSS for the flip animation */}
+      <style>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </section>
   );
 }
