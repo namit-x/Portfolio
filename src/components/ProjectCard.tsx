@@ -1,124 +1,80 @@
-import { useState } from 'react';
-import { cn } from '../lib/utils'
-import { ExternalLink, Clock } from 'lucide-react';
+// import { useState } from 'react';
+import { ExternalLink, Github } from 'lucide-react';
+import { Button } from './ui/button'
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-  isPractice?: boolean;
-  inProgress?: boolean;
-}
-
-const ProjectCard = ({
-  title,
-  description,
-  imageUrl,
-  link,
-  isPractice = false,
-  inProgress = false
-}: ProjectCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const buttonBaseClasses = cn(
-    "w-full sm:w-auto flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg",
-    "bg-gradient hover:opacity-90 transition-all duration-300",
-    "transform hover:scale-105 group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2",
-    "overflow-hidden"
-  );
-
+const ProjectCard = ({ project, }: { project: any; isRealLife?: boolean }) => {
   return (
-    <article
-      className="relative group overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      aria-label={`${title} project card`}
-    >
-      <div className={cn(
-        "rounded-xl overflow-hidden transform transition-all duration-500 border-4",
-        "border border-white/10 shadow-xl backdrop-blur-sm",
-        isPractice ? "h-[250px]" : "h-[300px]",
-        isHovered ? "scale-105 shadow-2xl" : "",
-        "focus-within:ring-2 focus-within:ring-purple-500 focus-within:ring-offset-2"
-      )}>
-        {/* Progress Badge */}
-        {inProgress && (
-          <div className="absolute top-3 right-3 z-20">
-            <div className={cn(
-              "flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium",
-              "bg-amber-500/90 text-white backdrop-blur-sm",
-              "animate-pulse"
-            )}>
-              <Clock className="w-3 h-3" />
-              <span>In Progress</span>
-            </div>
-          </div>
-        )}
+    <article className="group relative overflow-hidden rounded-xl glass border border-border/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl">
 
-        <div className="relative h-full overflow-hidden">
-          {/* Image Layer */}
-          <div className={cn(
-            "absolute inset-0 transition-all duration-500",
-            isHovered ? "opacity-100 scale-110" : "opacity-30"
-          )}>
-            <img
-              src={imageUrl}
-              alt={`${title} project preview`}
-              className="w-full h-full object-cover object-left transition-transform duration-700"
-              loading="lazy"
-            />
-          </div>
+      {/* Project Image */}
+      <div className="relative h-48 sm:h-56 overflow-hidden">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+        />
 
-          {/* Overlay Gradient */}
-          <div className={cn(
-            "absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80",
-            "transition-opacity duration-500",
-            isHovered ? "opacity-60" : "opacity-90"
-          )} />
+        {/* Project Title Overlay */}
+      </div>
 
-          {/* Content Layer */}
-          <div className="relative h-full p-6 flex flex-col justify-between z-10">
-            <div className="space-y-3">
-              <header>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
-                  {title}
-                </h3>
-              </header>
-              <p className={cn(
-                "text-gray-200 leading-relaxed",
-                isPractice ? "text-sm line-clamp-2" : "text-base line-clamp-3",
-                "transition-all duration-300",
-                isHovered ? "text-white" : ""
-              )}>
-                {description}
-              </p>
-            </div>
+      {/* Project Content */}
+      <div className="p-6 space-y-4">
+        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 leading-tight">
+          {project.title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base line-clamp-3">
+          {project.description}
+        </p>
 
-            <footer className="mt-4 overflow-hidden p-2 w-fit">
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech: string, index: number) => (
+            <span
+              key={index}
+              className="px-3 py-1 text-xs font-medium glass border border-primary/20 text-primary rounded-full hover:bg-primary/10 transition-colors duration-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3 pt-2">
+          {project.liveUrl ? (
+            <Button
+              className="flex-1 bg-gradient text-white hover:opacity-90 transition-all duration-300 group/btn"
+              asChild
+            >
               <a
-                href={link}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(
-                  buttonBaseClasses,
-                  "text-white text-sm font-medium w-fit",
-                  inProgress ? "opacity-75 cursor-not-allowed" : ""
-                )}
-                {...(inProgress && {
-                  onClick: (e) => e.preventDefault(),
-                  'aria-disabled': true
-                })}
-                aria-label={`View ${title} project ${inProgress ? '(in progress)' : ''}`}
+                className="flex items-center justify-center gap-2"
               >
-                <span>{inProgress ? 'Coming Soon' : 'View Project'}</span>
-                <ExternalLink className={cn(
-                  "w-3 h-3 transition-transform duration-300",
-                  !inProgress && "group-hover:translate-x-1"
-                )} />
+                <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
+                Live Demo
               </a>
-            </footer>
-          </div>
+            </Button>
+          ) : null}
+
+          {project.githubUrl && (
+            <Button
+              variant="outline"
+              className={`${project.liveUrl ? 'flex-1' : 'w-full'} glass border-border/30 hover:bg-muted/50 group/btn`}
+              asChild
+            >
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <Github className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-200" />
+                View Code
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </article>

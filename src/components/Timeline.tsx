@@ -1,12 +1,20 @@
+import { useTheme } from "./ThemeContext";
+import { clsx } from 'clsx';
+
 const Timeline = () => {
+  const { theme } = useTheme();
   return (
     <div className="w-full px-4 py-16 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold overflow-hidden">
-            <span className="text-gradient">Timeline</span>
+            <span className={clsx(
+              theme === 'light'
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+            )}>Timeline</span>
           </h2>
-          <div className="h-1 w-20 bg-white mx-auto rounded-full mt-4"></div>
+          <div className="h-1 w-20 bg-primary mx-auto rounded-full mt-4"></div>
         </div>
 
         {/* Timeline Container */}

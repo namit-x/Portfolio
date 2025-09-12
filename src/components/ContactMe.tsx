@@ -11,7 +11,7 @@ interface ContactLink {
 const ContactMe = () => {
   const contactInfo = {
     email: "namitwork099@gmail.com",
-    linkedin: "https://www.linkedin.com/in/namit-rana-74772733a/",
+    linkedin: "www.linkedin.com/in/namit-raana",
     github: "https://github.com/namit-x"
   };
 
@@ -61,7 +61,7 @@ const ContactMe = () => {
 
           <div className={cn(
             "bg-[#1E1E2F]/90 rounded-xl p-6 sm:p-8 shadow-xl border-2 border-purple-500/30",
-            "hover:border-purple-500 transform hover:scale-[1.02] transition-all duration-500"
+            "hover:border-purple-500 transform hover:scale-[1.01] transition-all duration-500"
           )}>
             <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed">

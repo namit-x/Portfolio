@@ -4,6 +4,7 @@ import AboutSection from "./AboutSection"
 import Timeline from "./Timeline"
 import Projects from "./Projects"
 import ContactMe from "./ContactMe"
+import Navbar from "./Navbar"
 
 const PARTICLE_COUNT = 25
 
@@ -22,7 +23,7 @@ const Background = () => {
     canvas.width = width
     canvas.height = height
 
-    // Initialize particles only once
+    // Initialize particles
     particlesRef.current = Array.from({ length: PARTICLE_COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -31,10 +32,16 @@ const Background = () => {
       radius: Math.random() * 3 + 1,
     }))
 
+    const getParticleColor = () => {
+      const style = getComputedStyle(document.documentElement)
+      const foreground = style.getPropertyValue("--foreground").trim()
+      return foreground ? `hsl(${foreground})` : "white"
+    }
+
     const draw = (p: any) => {
       ctx.beginPath()
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-      ctx.fillStyle = "white"
+      ctx.fillStyle = getParticleColor()
       ctx.fill()
     }
 
@@ -52,7 +59,7 @@ const Background = () => {
 
     animate()
 
-    // Throttle resize event
+    // Resize handler
     let resizeTimeout: number | null = null
     const handleResize = () => {
       if (resizeTimeout) clearTimeout(resizeTimeout)
@@ -61,9 +68,7 @@ const Background = () => {
         height = window.innerHeight
         canvas.width = width
         canvas.height = height
-        // Optionally, respawn particles or reposition
         particlesRef.current.forEach(p => {
-          // Clamp within bounds
           p.x = Math.max(0, Math.min(p.x, width))
           p.y = Math.max(0, Math.min(p.y, height))
         })
@@ -83,9 +88,10 @@ const Background = () => {
     <>
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 z-0 w-screen h-full bg-black pointer-events-none"
+        className="fixed top-0 left-0 z-0 w-screen h-full bg-background pointer-events-none"
       />
-      <div className="text-white relative top-0 left-0 z-10">
+      <div className="relative top-0 left-0 z-10 text-foreground">
+        <Navbar />
         <HeroSection />
         <AboutSection />
         <Timeline />
