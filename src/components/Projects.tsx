@@ -1,5 +1,7 @@
 import { Code, Palette, Database, } from "lucide-react";
 import ProjectCard from './ProjectCard.tsx'
+import clsx from 'clsx'
+import { useTheme } from "./ThemeContext.tsx";
 
 const realLifeProjects = [
   {
@@ -67,36 +69,35 @@ const featuredProjects = [
   }
 ];
 
-const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
-  <div className="text-center mb-12 space-y-4">
-    <div className="flex items-center justify-center gap-3 mb-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gradient p-2">
-        {title}
-      </h2>
-    </div>
-    <div className="h-1 w-24 bg-gradient mx-auto rounded-full"></div>
-    <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-      {subtitle}
-    </p>
-  </div>
-);
-
 const Projects = () => {
+  const { theme } = useTheme();
   return (
     <section id="projects" className="section-container">
       <div className="space-y-20">
-        
+
         {/* Real Life Projects Section */}
+        <div className="text-center mb-12 space-y-4">
+          <div className={clsx("flex items-center justify-center gap-3 mb-4"
+          )}>
+            <h2  className={clsx("text-3xl sm:text-4xl font-bold p-2",
+            theme === 'light'
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+          )}>
+              Real Life Projects
+            </h2>
+          </div>
+          <div className="h-1 w-24 bg-gradient mx-auto rounded-full"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Live projects currently serving real users and making a difference in the world
+          </p>
+        </div>
         <div>
-          <SectionHeader
-            title="Real Life Projects"
-            subtitle="Live projects currently serving real users and making a difference in the world"
-          />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {realLifeProjects.map((project, index) => (
-              <ProjectCard 
-                key={`real-${index}`} 
+              <ProjectCard
+                key={`real-${index}`}
                 project={project}
                 isRealLife={true}
               />
@@ -105,17 +106,32 @@ const Projects = () => {
         </div>
 
         {/* Featured Projects Section */}
+        <div className="text-center mb-12 space-y-4">
+          <div className={clsx("flex items-center justify-center gap-3 mb-4",
+            theme === 'light'
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+          )}>
+           <h2  className={clsx("text-3xl sm:text-4xl font-bold p-2",
+            theme === 'light'
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+          )}>
+              Featured Projects
+            </h2>
+          </div>
+          <div className="h-1 w-24 bg-gradient mx-auto rounded-full"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            A curated collection of projects showcasing technical expertise and creative problem-solving
+          </p>
+        </div>
         <div>
-          <SectionHeader
-            title="Featured Projects"
-            subtitle="A curated collection of projects showcasing technical expertise and creative problem-solving"
-          />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <ProjectCard 
-                key={`featured-${index}`} 
-                project={project} 
+              <ProjectCard
+                key={`featured-${index}`}
+                project={project}
                 isRealLife={false}
               />
             ))}

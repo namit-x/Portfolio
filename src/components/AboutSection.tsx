@@ -83,7 +83,11 @@ export default function AboutSection() {
 
             <div className="pt-4 p-2">
               <Button
-                className="rounded-full bg-gradient text-base sm:text-lg p-4 sm:p-6 hover:scale-105 transition-transform duration-300 overflow-hidden"
+                className={clsx("rounded-full text-base sm:text-lg p-4 sm:p-6 hover:scale-105 transition-transform duration-300 overflow-hidden",
+                  theme === 'light'
+                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
+                )}
                 asChild
               >
                 <a
@@ -108,7 +112,11 @@ export default function AboutSection() {
               >
                 <div className="bg-card backdrop-blur-md p-4 sm:p-6 rounded-xl border border-border hover:border-primary/40 flex flex-col justify-between h-full min-h-[220px]">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 bg-gradient rounded-md">
+                    <div className={clsx("w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 rounded-md",
+                      theme === 'light'
+                      ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                      : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
+                    )}>
                       {card.icon}
                     </div>
                     <h4 className="text-xl sm:text-2xl font-semibold mb-2">

@@ -1,8 +1,11 @@
 // import { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Button } from './ui/button'
+import { clsx } from 'clsx'
+import { useTheme } from './ThemeContext';
 
 const ProjectCard = ({ project, }: { project: any; isRealLife?: boolean }) => {
+  const { theme } = useTheme();
   return (
     <article className="group relative overflow-hidden rounded-xl glass border border-border/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl">
 
@@ -43,7 +46,11 @@ const ProjectCard = ({ project, }: { project: any; isRealLife?: boolean }) => {
         <div className="flex gap-3 pt-2">
           {project.liveUrl ? (
             <Button
-              className="flex-1 bg-gradient text-white hover:opacity-90 transition-all duration-300 group/btn"
+              className={clsx("flex-1 bg-gradient text-white hover:opacity-90 transition-all duration-300 group/btn",
+                theme === 'light'
+                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
+              )}
               asChild
             >
               <a

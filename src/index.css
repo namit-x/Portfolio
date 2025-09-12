@@ -96,9 +96,7 @@
     }
 
     .text-gradient {
-        @apply text-transparent bg-clip-text 
-               bg-gradient-to-r from-cyan-600 to-purple-600 
-               dark:from-blue-500 dark:to-red-500;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-blue-500 dark:to-red-500;
     }
 
     .bg-gradient {
@@ -110,7 +108,7 @@
     }
 
     .bg-timeline {
-        @apply bg-gradient-to-t from-red-700 to-blue-700;
+        @apply bg-gradient-to-t from-cyan-600 to-purple-600 dark:from-blue-500 dark:to-red-500;
     }
 
 
@@ -144,14 +142,17 @@
     }
 
     @keyframes scale-in-out {
-        0%, 100% {
+
+        0%,
+        100% {
             transform: scale(1);
         }
+
         50% {
             transform: scale(1.05);
         }
     }
-    
+
     .animate-scale-in-out {
         animation: scale-in-out 1.2s ease-out infinite;
     }

@@ -1,104 +1,150 @@
-import { Mail, Linkedin, Github } from "lucide-react";
-import { cn } from '../lib/utils';
+import { Mail, Linkedin, Github, MapPin, Calendar } from "lucide-react";
+import { Card, CardContent } from "../components/ui/card";
+import { clsx } from 'clsx';
+import { useTheme } from "./ThemeContext"; // remove .tsx
 
-interface ContactLink {
+const contactInfo = {
+  email: "namitwork099@gmail.com",
+  linkedin: "www.linkedin.com/in/namit-raana",
+  github: "https://github.com/namit-x",
+  location: "Available Worldwide",
+  availability: "Open to Opportunities",
+};
+
+type ContactMethod = {
   href: string;
-  icon: React.ReactNode;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label: string;
+  value: string;
+  description: string;
   external?: boolean;
-}
+};
+
+const contactMethods: ContactMethod[] = [
+  {
+    href: `mailto:${contactInfo.email}`,
+    icon: Mail,
+    label: "Email",
+    value: contactInfo.email,
+    description: "Reach out directly via email",
+  },
+  {
+    href: `https://${contactInfo.linkedin}`,
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "View my profile",
+    description: "Let’s grow our professional network",
+    external: true,
+  },
+  {
+    href: contactInfo.github,
+    icon: Github,
+    label: "GitHub",
+    value: "Check my repos",
+    description: "Browse my projects & code samples",
+    external: true,
+  },
+];
+
+const ContactCard: React.FC<{ method: ContactMethod }> = ({ method }) => {
+  const Icon = method.icon;
+
+  return (
+    <Card className="hover:shadow-lg transition-shadow duration-300">
+      <CardContent className="p-5">
+        <a
+          href={method.href}
+          {...(method.external && { target: "_blank", rel: "noopener noreferrer" })}
+          className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors"
+          aria-label={`${method.label} - ${method.description}`}
+        >
+          <div className="bg-primary/10 text-primary p-3 rounded-lg">
+            <Icon className="w-6 h-6" />
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg text-foreground">{method.label}</h4>
+            <p className="text-sm text-muted-foreground">{method.description}</p>
+          </div>
+        </a>
+      </CardContent>
+    </Card>
+  );
+};
 
 const ContactMe = () => {
-  const contactInfo = {
-    email: "namitwork099@gmail.com",
-    linkedin: "www.linkedin.com/in/namit-raana",
-    github: "https://github.com/namit-x"
-  };
-
-  const contactLinks: ContactLink[] = [
-    {
-      href: `mailto:${contactInfo.email}`,
-      icon: <Mail className="w-4 h-4 sm:w-5 sm:h-5" />,
-      label: "Get in Touch"
-    },
-    {
-      href: contactInfo.linkedin,
-      icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />,
-      label: "Connect on LinkedIn",
-      external: true
-    },
-    {
-      href: contactInfo.github,
-      icon: <Github className="w-4 h-4 sm:w-5 sm:h-5" />,
-      label: "View on GitHub",
-      external: true
-    }
-  ];
-
-  const buttonBaseClasses = cn(
-    "w-full sm:w-auto flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg",
-    "bg-gradient hover:opacity-90 transition-all duration-300",
-    "transform hover:scale-105 group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-  );
+  const { theme } = useTheme(); // FIX: get theme
 
   return (
     <section
       id="contact"
-      className="w-full min-h-screen py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
+      className="section-container min-h-screen flex flex-col items-center justify-center py-16"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-4xl w-full py-4">
-        <div className="space-y-6 sm:space-y-8 animate-fade-in p-3">
-          <header className="text-center">
-            <h1
-              id="contact-heading"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold p-2 sm:mb-8"
-            >
-              <span className="text-gradient">Contact Me</span>
-            </h1>
-            <div className="h-1 w-32 mt-2 bg-white mx-auto rounded-full" aria-hidden="true"></div>
-          </header>
+      <header className="text-center max-w-3xl space-y-6">
+        <h1
+          id="contact-heading"
+          className={clsx(
+            "text-3xl sm:text-4xl font-bold p-2",
+            theme === 'light'
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+          )}
+        >
+          Let’s Build Something Together
+        </h1>
+        <p className="text-lg text-muted-foreground">
+          Passionate about crafting modern web solutions. I’m always excited to collaborate on impactful projects that push the boundaries.
+        </p>
+      </header>
 
-          <div className={cn(
-            "bg-[#1E1E2F]/90 rounded-xl p-6 sm:p-8 shadow-xl border-2 border-purple-500/30",
-            "hover:border-purple-500 transform hover:scale-[1.01] transition-all duration-500"
-          )}>
-            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-              <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed">
-                I'm a passionate developer with a knack for turning ideas into responsive, functional web applications.
-                I'm currently looking for internship opportunities to sharpen my skills, contribute to real-world projects, and grow as a full-stack developer.
-              </p>
-
-              <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed">
-                Let’s connect — I’m serious about learning and even more serious about delivering.
-              </p>
+      <div className="grid lg:grid-cols-3 gap-10 mt-12 w-full max-w-6xl">
+        
+        {/* Left Info Panel */}
+        <Card className="p-8 bg-primary/5 border-primary/20 space-y-6">
+          <h2 className="text-2xl font-semibold text-foreground">About Me</h2>
+          <p className="text-muted-foreground">
+            I’m a full-stack developer specialized in building responsive, performant web applications.
+            Currently seeking exciting internship opportunities to grow my skillset and contribute to meaningful projects.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <MapPin className="w-5 h-5 text-primary" />
+              <span className="text-sm text-muted-foreground">{contactInfo.location}</span>
             </div>
-
-            <nav aria-label="Contact methods">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 py-4">
-                {contactLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    {...(link.external && {
-                      target: "_blank",
-                      rel: "noopener noreferrer"
-                    })}
-                    className={buttonBaseClasses}
-                    aria-label={`${link.label} - Opens ${link.external ? 'in new tab' : 'email client'}`}
-                  >
-                    <span className="text-white group-hover:animate-bounce" aria-hidden="true">
-                      {link.icon}
-                    </span>
-                    <span className="text-sm sm:text-base text-white">
-                      {link.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </nav>
+            <div className="flex items-center gap-3">
+              <Calendar className="w-5 h-5 text-primary" />
+              <span className="text-sm text-muted-foreground">{contactInfo.availability}</span>
+            </div>
           </div>
+        </Card>
+
+        {/* Contact Methods Grid */}
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {contactMethods.map((method, idx) => (
+            <ContactCard key={idx} method={method} />
+          ))}
         </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="mt-12 text-center">
+        <Card className="bg-primary/10 border-primary/30">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-semibold text-foreground mb-4">
+              Ready to start a conversation?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              I typically respond within 24 hours. Let's turn ideas into reality.
+            </p>
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="inline-flex items-center gap-3 px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition"
+            >
+              <Mail className="w-5 h-5" />
+              Send Me a Message
+            </a>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
