@@ -85,7 +85,7 @@ export default function HeroSection() {
               )} style={{ backfaceVisibility: 'hidden' }}>
                 <div className="relative w-full h-full">
                   <img
-                    src="/NamitAvatar.jpg"
+                    src="/NamitAvatar.webp"
                     alt="Namit Avatar"
                     className="w-full h-full object-cover rounded-full"
                   />
@@ -106,7 +106,7 @@ export default function HeroSection() {
               }}>
                 <div className="relative w-full h-full">
                   <img
-                    src="/Namit.jpg"
+                    src="/Namit.webp"
                     alt="Namit Real Photo"
                     className="w-full h-full object-cover rounded-full"
                   />
@@ -259,7 +259,7 @@ export default function HeroSection() {
               >
                 <div className="relative w-full h-full">
                   <img
-                    src="/NamitAvatar.jpg"
+                    src="/Namit.webp"
                     alt="Namit Real Photo"
                     className="w-full h-full object-cover rounded-xl"
                   />

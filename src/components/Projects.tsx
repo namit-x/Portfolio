@@ -17,7 +17,7 @@ const realLifeProjects = [
   {
     title: "Advance Architect",
     description: "A showcase of architectural designs, concepts, and completed projects demonstrating creativity and technical expertise in architecture.",
-    image: "/Advance.png",
+    image: "/Advance.webp",
     technologies: ["React", "Tailwind CSS", "UI/UX", "Form Management"],
     liveUrl: "https://www.advancearchitect.in",
     githubUrl: "",
@@ -27,7 +27,7 @@ const realLifeProjects = [
   {
     title: "Studio65",
     description: "A showcase of architectural designs, concepts, and completed projects demonstrating creativity and technical expertise in architecture.",
-    image: "/Vesta.png",
+    image: "/Vesta.webp",
     technologies: ["React", "Tailwind CSS", "UI/UX", "Form Management"],
     liveUrl: "https://www.vestadiagnostics.in",
     githubUrl: "",
@@ -50,7 +50,7 @@ const featuredProjects = [
   {
     title: "Shoporia",
     description: "A modern e-commerce platform offering a seamless shopping experience with intuitive navigation and secure transactions.",
-    image: "/image.webp",
+    image: "/Shoporia.webp",
     technologies: ["React", "Node.js", "MongoDB", "JWT"],
     liveUrl: "",
     githubUrl: "https://github.com/namit-x/P2_Shoporia",
