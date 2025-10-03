@@ -6,14 +6,14 @@ import { Icon } from '@iconify/react';
 import { useTheme } from './ThemeContext';
 
 export default function HeroSection() {
-  const [mee, setMee] = useState("");
+  const [mee, setMee] = useState("Namit");
   const [animating, setAnimating] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { theme } = useTheme();
-  
+
   const [text] = useTypewriter({
-    words: [`Hey, I'm Namit — a self-taught web developer who loves turning ideas into digital reality. This isn't just a portfolio; it's a snapshot of what I build, how I grow, and why I care. I don't just write code — I speak to crowds, build projects and chase impact.`],
+    words: [`— a self-taught web developer who loves turning ideas into digital reality. This isn't just a portfolio; it's a snapshot of what I build, how I grow, and why I care. I don't just write code — I speak to crowds, build projects and chase impact.`],
     typeSpeed: 40,
   });
 
@@ -60,8 +60,8 @@ export default function HeroSection() {
       <div className="flex flex-col lg:hidden items-center w-full max-w-4xl mx-auto space-y-8">
         {/* Image Container for Mobile with Enhanced Flip Animation */}
         <div className="flex justify-center animate-fade-in">
-          <div 
-            className="w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64" 
+          <div
+            className="w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64"
             style={{ perspective: '1200px' }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -79,7 +79,7 @@ export default function HeroSection() {
               {/* Front of card (Avatar) */}
               <div className={clsx(
                 "absolute w-full h-full rounded-full overflow-hidden p-[3px]",
-                theme === 'light' 
+                theme === 'light'
                   ? "bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-500"
                   : "bg-gradient-to-r from-blue-500 via-purple-500 to-red-500"
               )} style={{ backfaceVisibility: 'hidden' }}>
@@ -141,6 +141,7 @@ export default function HeroSection() {
             >
               {mee}
             </span>
+
           </h1>
 
           {/* Typewriter Text - Fixed width container */}
@@ -203,8 +204,8 @@ export default function HeroSection() {
       <div className="hidden lg:flex items-center w-full max-w-7xl mx-auto overflow-hidden">
         {/* Image Container for Desktop with Enhanced 3D Flip Animation */}
         <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden">
-          <div 
-            className="w-60 xl:w-[350px] h-60 xl:h-[600px] py-10 px-2 overflow-hidden" 
+          <div
+            className="w-60 xl:w-[350px] h-60 xl:h-[600px] py-10 px-2 overflow-hidden"
             style={{ perspective: '1500px' }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -215,11 +216,11 @@ export default function HeroSection() {
                 transformStyle: 'preserve-3d',
                 transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
                 boxShadow: theme === 'light'
-                  ? isHovered 
-                    ? '0 25px 50px rgba(100,116,139,0.3), 0 0 100px rgba(6,182,212,0.15)' 
+                  ? isHovered
+                    ? '0 25px 50px rgba(100,116,139,0.3), 0 0 100px rgba(6,182,212,0.15)'
                     : '0 15px 35px rgba(100,116,139,0.2), 0 0 60px rgba(6,182,212,0.08)'
-                  : isHovered 
-                    ? '0 25px 50px rgba(0,0,0,0.35), 0 0 100px rgba(59,130,246,0.1)' 
+                  : isHovered
+                    ? '0 25px 50px rgba(0,0,0,0.35), 0 0 100px rgba(59,130,246,0.1)'
                     : '0 15px 35px rgba(0,0,0,0.25), 0 0 60px rgba(59,130,246,0.05)'
               }}
             >
