@@ -1,8 +1,6 @@
 import Background from './components/Background'
 import SmoothScroll from './components/SmoothScroll'
 import { ThemeProvider } from './components/ThemeContext';
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function App() {
   return (
