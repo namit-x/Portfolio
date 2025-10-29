@@ -276,7 +276,7 @@ export default function HeroSection() {
         <div className="w-1/2 max-w-2xl space-y-6 overflow-hidden">
           {/* Greeting */}
           <p className={clsx(
-            "font-mono text-2xl xl:text-3xl animate-fade-in w-[180px]",
+            "font-mono text-2xl xl:text-3xl animate-fade-in w-[200px]",
             theme === 'light'
               ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
               : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"

@@ -25,8 +25,8 @@ const realLifeProjects = [
     icon: <Palette className="w-5 h-5" />,
   },
   {
-    title: "Studio65",
-    description: "A showcase of architectural designs, concepts, and completed projects demonstrating creativity and technical expertise in architecture.",
+    title: "Vesta Diagnostics",
+    description: "Developed a sleek web platform for Vesta Diagnostics that enables patients to effortlessly book medical tests online and access essential diagnostic information with ease.",
     image: "/Vesta.webp",
     technologies: ["React", "Tailwind CSS", "UI/UX", "Form Management"],
     liveUrl: "https://www.vestadiagnostics.in",
@@ -79,11 +79,11 @@ const Projects = () => {
         <div className="text-center mb-12 space-y-4">
           <div className={clsx("flex items-center justify-center gap-3 mb-4"
           )}>
-            <h2  className={clsx("text-3xl sm:text-4xl font-bold p-2",
-            theme === 'light'
-              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
-          )}>
+            <h2 className={clsx("text-3xl sm:text-4xl font-bold p-2",
+              theme === 'light'
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+                : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+            )}>
               Real Life Projects
             </h2>
           </div>
@@ -112,11 +112,11 @@ const Projects = () => {
               ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
               : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
           )}>
-           <h2  className={clsx("text-3xl sm:text-4xl font-bold p-2",
-            theme === 'light'
-              ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
-          )}>
+            <h2 className={clsx("text-3xl sm:text-4xl font-bold p-2",
+              theme === 'light'
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
+                : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
+            )}>
               Featured Projects
             </h2>
           </div>
