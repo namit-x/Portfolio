@@ -10,6 +10,7 @@ export default function HeroSection() {
   const [animating, setAnimating] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [hasManualOverride, setHasManualOverride] = useState(false);
   const { theme } = useTheme();
 
   const [text] = useTypewriter({
@@ -21,25 +22,45 @@ export default function HeroSection() {
     { name: 'TypeScript', icon: 'logos:typescript-icon' },
     { name: 'React', icon: 'logos:react' },
     { name: 'JavaScript', icon: 'logos:javascript' },
-    { name: 'Git', icon: 'logos:git-icon' },
-    { name: 'GitHub', icon: 'octicon:mark-github-16' },
-    { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
     { name: 'Java', icon: 'logos:java' },
     { name: 'GraphQL', icon: 'logos:graphql' },
     { name: 'Python', icon: 'logos:python' },
+    { name: 'MongoDB', icon: 'logos:mongodb-icon' },
+    { name: 'Git', icon: 'logos:git-icon' },
+    { name: 'GitHub', icon: 'octicon:mark-github-16' },
+    { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+    // { name: 'Express.js', icon: 'simple-icons:express' },
   ];
 
-  const titles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Freelancer", "Undergrad"];
+  const titles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Freelancer", "Problem Solver"];
   const currentTitleIndex = useRef(0);
 
-  // Auto-flip timer - flips every 2 seconds
-  useEffect(() => {
-    const flipInterval = setInterval(() => {
-      setIsFlipped(prev => !prev);
-    }, 5000);
+  const handleImageClick = () => {
+    setHasManualOverride(true);
+    setIsFlipped(prev => !prev);
+  };
 
-    return () => clearInterval(flipInterval);
-  }, []);
+  // // Auto-flip timer - flips every 2 seconds
+  // useEffect(() => {
+  //   if (hasManualOverride) return;
+
+  //   const flipInterval = setInterval(() => {
+  //     setIsFlipped(prev => !prev);
+  //   }, 5000);
+
+  //   return () => clearInterval(flipInterval);
+  // }, [hasManualOverride]);
+
+
+  useEffect(() => {
+    if (hasManualOverride) return;
+
+    if (theme === "dark") {
+      setIsFlipped(false); // Dark
+    } else {
+      setIsFlipped(true); // Real photo
+    }
+  }, [theme, hasManualOverride]);
 
   // Title animation timer
   useEffect(() => {
@@ -61,7 +82,7 @@ export default function HeroSection() {
       {/* Mobile Layout */}
       <div className="flex flex-col lg:hidden items-center w-full max-w-4xl mx-auto space-y-8">
         {/* Image Container for Mobile with Enhanced Flip Animation */}
-        <div className="flex justify-center animate-fade-in">
+        <div className="flex justify-center animate-fade-in" onClick={handleImageClick}>
           <div
             className="w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64"
             style={{ perspective: '1200px' }}
@@ -75,7 +96,7 @@ export default function HeroSection() {
                 transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
               }}
             >
-              {/* Front of card (Avatar) */}
+              {/* Front of card (Dark) */}
               <div className={clsx(
                 "absolute w-full h-full rounded-full overflow-hidden p-[3px]",
                 theme === 'light'
@@ -84,8 +105,8 @@ export default function HeroSection() {
               )} style={{ backfaceVisibility: 'hidden' }}>
                 <div className="relative w-full h-full">
                   <img
-                    src="/NamitAvatar.webp"
-                    alt="Namit Avatar"
+                    src="/NamitDark.webp"
+                    alt="Namit Dark"
                     className="w-full h-full object-cover rounded-full"
                   />
                   {/* Subtle shine effect */}
@@ -201,7 +222,7 @@ export default function HeroSection() {
       {/* Desktop Layout */}
       <div className="hidden lg:flex items-center w-full max-w-7xl mx-auto overflow-hidden">
         {/* Image Container for Desktop with Enhanced 3D Flip Animation */}
-        <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden">
+        <div className="w-1/2 flex justify-center animate-fade-in overflow-hidden" onClick={handleImageClick}>
           <div
             className="w-60 xl:w-[350px] h-60 xl:h-[600px] py-10 px-2 overflow-hidden"
             style={{ perspective: '1500px' }}
@@ -222,7 +243,7 @@ export default function HeroSection() {
                     : '0 15px 35px rgba(0,0,0,0.25), 0 0 60px rgba(59,130,246,0.05)'
               }}
             >
-              {/* Front of card (Avatar) */}
+              {/* Front of card (Dark) */}
               <div
                 className={clsx(
                   "absolute w-full h-full rounded-xl overflow-hidden p-[3px]",
@@ -234,8 +255,8 @@ export default function HeroSection() {
               >
                 <div className="relative w-full h-full">
                   <img
-                    src="/NamitAvatar.webp"
-                    alt="Namit Avatar"
+                    src="/NamitDark.webp"
+                    alt="Namit Dark"
                     className="w-full h-full object-cover rounded-xl"
                   />
                   {/* Subtle shine effect */}
