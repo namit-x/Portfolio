@@ -1,4 +1,4 @@
-import { Code, Mic, Coffee, Download, LaptopMinimal } from "lucide-react";
+import { Code, Swords, Coffee, Download, LaptopMinimal } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "./ThemeContext";
 import { clsx } from 'clsx';
@@ -15,10 +15,10 @@ export default function AboutSection() {
         "Building websites that move fast and look good on any device — no matter how many tabs you have open.💻",
     },
     {
-      icon: <Mic className="h-6 w-6 text-primary-foreground" />,
-      title: "Orator",
+      icon: <Swords className="h-6 w-6 text-primary-foreground" />,
+      title: "Hustler",
       description:
-        "The transition from standing in the crowd to addressing the crowd was not an easy choice but it was a wise one.",
+        "Well whose not hustler in this world? I'm just a hustler who loves to hustle.",
     },
     {
       icon: <Coffee className="h-6 w-6 text-primary-foreground" />,
@@ -30,7 +30,7 @@ export default function AboutSection() {
       icon: <LaptopMinimal className="h-6 w-6 text-primary-foreground" />,
       title: "Student",
       description:
-        "Academically grinding with a 9.07 GPA — because who says you can’t code and study? 📖",
+        "Academically grinding with a 9.06 GPA — because who says you can’t code and study? 📖",
     },
   ];
 
@@ -57,7 +57,7 @@ export default function AboutSection() {
               Powered by Coffee & Ambition.
             </h3>
             <p className="text-muted-foreground text-sm sm:text-base">
-              Hey! I'm Namit, a 3rd-year student at Jain University, Bengaluru,
+              Hey! I'm Namit — a 3rd-year student at Jain University, Bengaluru,
               currently juggling a CGPA of 9.07, daily gym sessions, freelance
               gigs, and late-night coding marathons. I build clean, responsive,
               and user-friendly web applications that not only look good but
@@ -65,12 +65,12 @@ export default function AboutSection() {
             </p>
             <p className="text-muted-foreground text-sm sm:text-base">
               When I’m not coding, you’ll find me on stage hosting college fests
-              or speaking at events, because debugging JavaScript and grabbing
+              or speaking at events — because debugging JavaScript and grabbing
               a mic both come naturally to me.
             </p>
             <p className="text-muted-foreground text-sm sm:text-base">
               My toolkit includes React.js, Node.js, Express.js, TypeScript,
-              Redux, GraphQL, RESTful APIs, and Tailwind CSS, backed by tools
+              Redux, GraphQL, RESTful APIs, and Tailwind CSS — backed by tools
               like Git, GitHub, VS Code, ChatGPT, and Cursor AI. I love solving
               problems, optimizing user experience, and shipping things that
               work like magic.
@@ -85,8 +85,8 @@ export default function AboutSection() {
               <Button
                 className={clsx("rounded-full text-base sm:text-lg p-4 sm:p-6 hover:scale-105 transition-transform duration-300 overflow-hidden",
                   theme === 'light'
-                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-purple-500/25"
-                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:bg-white border-0 border-transparent hover:border-white"
+                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
                 )}
                 asChild
               >
@@ -115,7 +115,7 @@ export default function AboutSection() {
                     <div className={clsx("w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-4 rounded-md",
                       theme === 'light'
                       ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                      : "bg-gradient-to-r from-blue-500 to-red-500 hover:bg-white border-0 border-transparent hover:border-white"
+                      : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
                     )}>
                       {card.icon}
                     </div>

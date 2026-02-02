@@ -24,9 +24,7 @@ export default function HeroSection() {
     { name: 'Git', icon: 'logos:git-icon' },
     { name: 'GitHub', icon: 'octicon:mark-github-16' },
     { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-    { name: 'Java', icon: 'logos:java' },
     { name: 'GraphQL', icon: 'logos:graphql' },
-    { name: 'Python', icon: 'logos:python' },
   ];
 
   const titles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Freelancer", "Undergrad"];
@@ -73,6 +71,9 @@ export default function HeroSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                boxShadow: theme === 'light'
+                  ? isHovered ? '0 20px 40px rgba(100,116,139,0.25), 0 0 60px rgba(6,182,212,0.1)' : '0 10px 25px rgba(100,116,139,0.15), 0 0 30px rgba(6,182,212,0.05)'
+                  : isHovered ? '0 20px 40px rgba(0,0,0,0.3)' : '0 10px 25px rgba(0,0,0,0.2)'
               }}
             >
               {/* Front of card (Avatar) */}
@@ -89,7 +90,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover rounded-full"
                   />
                   {/* Subtle shine effect */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500"></div> */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div>
                 </div>
               </div>
 
@@ -110,7 +111,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover rounded-full"
                   />
                   {/* Subtle shine effect */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500"></div> */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div>
                 </div>
               </div>
             </div>
@@ -140,6 +141,7 @@ export default function HeroSection() {
             >
               {mee}
             </span>
+
           </h1>
 
           {/* Typewriter Text - Fixed width container */}
@@ -175,7 +177,7 @@ export default function HeroSection() {
                 "rounded-md transition-all duration-500 ease-in-out w-full sm:w-auto",
                 theme === 'light'
                   ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:bg-white border-0 border-transparent hover:border-white"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
               )}
               size="lg"
               asChild
@@ -187,7 +189,7 @@ export default function HeroSection() {
                 "rounded-md font-bold transition-all duration-500 ease-in-out w-full sm:w-auto",
                 theme === 'light'
                   ? "border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-400 hover:shadow-lg"
-                  : "border border-gradient hover:border-white text-white  bg-black hover:bg-gradient-to-r from-blue-500 to-red-500"
+                  : "border border-gradient hover:border-white text-white hover:text-transparent bg-black hover:bg-gradient-to-r from-blue-500 to-red-500"
               )}
               size="lg"
               asChild
@@ -239,7 +241,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover rounded-xl"
                   />
                   {/* Subtle shine effect */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div> */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div>
                 </div>
               </div>
 
@@ -263,7 +265,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover rounded-xl"
                   />
                   {/* Subtle shine effect */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div> */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div>
                 </div>
               </div>
             </div>
@@ -322,13 +324,13 @@ export default function HeroSection() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex gap-4 animate-fade-in mt-8 p-4">
+          <div className="flex gap-4 animate-fade-in mt-8">
             <Button
               className={clsx(
-                "rounded-md transition-all duration-500 ease-in-out hover:scale-105 transition-transform duration-300",
+                "rounded-md transition-all duration-500 ease-in-out",
                 theme === 'light'
-                  ? "bg-gradient-to-r from-cyan-500 to-purple-600"
-                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:bg-white border-0 border-transparent hover:border-white"
+                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
               )}
               size="lg"
               asChild
@@ -337,10 +339,10 @@ export default function HeroSection() {
             </Button>
             <Button
               className={clsx(
-                "rounded-md font-bold transition-all duration-500 ease-in-out hover:scale-105 transition-transform duration-300",
+                "rounded-md font-bold transition-all duration-500 ease-in-out",
                 theme === 'light'
                   ? "border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-400 hover:shadow-lg"
-                  : "border border-gradient hover:border-white text-white bg-black hover:bg-black"
+                  : "border border-gradient hover:border-white text-white hover:text-transparent bg-black hover:bg-gradient-to-r from-blue-500 to-red-500"
               )}
               size="lg"
               asChild
