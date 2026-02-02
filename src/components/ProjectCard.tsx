@@ -49,7 +49,7 @@ const ProjectCard = ({ project, }: { project: any; isRealLife?: boolean }) => {
               className={clsx("flex-1 bg-gradient text-white hover:opacity-90 transition-all duration-300 group/btn",
                 theme === 'light'
                   ? "bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:text-transparent hover:bg-white border-0 border-transparent hover:border-white"
+                  : "bg-gradient-to-r from-blue-500 to-red-500 hover:bg-white border-0 border-transparent hover:border-white"
               )}
               asChild
             >
