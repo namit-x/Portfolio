@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, MapPin, Calendar } from "lucide-react";
+import { Mail, Linkedin, Github, Code, MapPin, Calendar } from "lucide-react";
 import { Card, CardContent } from "../components/ui/card";
 import { clsx } from 'clsx';
 import { useTheme } from "./ThemeContext"; // remove .tsx
@@ -7,6 +7,7 @@ const contactInfo = {
   email: "namitwork099@gmail.com",
   linkedin: "www.linkedin.com/in/namit-raana",
   github: "https://github.com/namit-x",
+  leetcode:"https://leetcode.com/u/namitrana/",
   location: "Available Worldwide",
   availability: "Open to Opportunities",
 };
@@ -42,6 +43,14 @@ const contactMethods: ContactMethod[] = [
     label: "GitHub",
     value: "Check my repos",
     description: "Browse my projects & code samples",
+    external: true,
+  },
+  {
+    href: contactInfo.leetcode,
+    icon: Code,
+    label: "Leetcode",
+    value: "Check my consistency",
+    description: "Prove of consistency, make sure to see max streak.",
     external: true,
   },
 ];
