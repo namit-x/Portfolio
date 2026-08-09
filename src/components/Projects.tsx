@@ -84,7 +84,7 @@ const Projects = () => {
                 ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600"
                 : "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500"
             )}>
-              Real Life Projects
+              Client Projects
             </h2>
           </div>
           <div className="h-1 w-24 bg-gradient mx-auto rounded-full"></div>
