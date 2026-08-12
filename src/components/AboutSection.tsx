@@ -12,7 +12,7 @@ export default function AboutSection() {
       icon: <Code className="h-6 w-6 text-primary-foreground" />,
       title: "Web Developer",
       description:
-        "Building websites that move fast and look good on any device — no matter how many tabs you have open.💻",
+        "Building websites that move fast and look good on any device no matter how many tabs you have open.💻",
     },
     {
       icon: <Mic className="h-6 w-6 text-primary-foreground" />,
@@ -30,7 +30,7 @@ export default function AboutSection() {
       icon: <LaptopMinimal className="h-6 w-6 text-primary-foreground" />,
       title: "Student",
       description:
-        "Academically grinding with a 9.07 GPA — because who says you can’t code and study? 📖",
+        "Academically grinding with a 9.07 GPA because who says you can’t code and study? 📖",
     },
   ];
 
