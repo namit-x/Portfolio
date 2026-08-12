@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import HeroSection from "./HeroSection"
 import AboutSection from "./AboutSection"
-import Timeline from "./Timeline"
+// import Timeline from "./Timeline"
 import Projects from "./Projects"
 import ContactMe from "./ContactMe"
 import Navbar from "./Navbar"
