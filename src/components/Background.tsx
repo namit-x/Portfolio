@@ -94,7 +94,7 @@ const Background = () => {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <Timeline />
+        {/* <Timeline /> */}
         <Projects />
         <ContactMe />
       </div>

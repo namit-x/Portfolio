@@ -14,7 +14,7 @@ export default function HeroSection() {
   const { theme } = useTheme();
 
   const [text] = useTypewriter({
-    words: [`— a self-taught web developer who loves turning ideas into digital reality. This isn't just a portfolio; it's a snapshot of what I build, how I grow, and why I care. I don't just write code — I speak to crowds, build projects and chase impact.`],
+    words: [` a self-taught web developer who loves turning ideas into digital reality. This isn't just a portfolio; it's a snapshot of what I build, how I grow, and why I care. I don't just write code I speak to crowds, build projects and chase impact.`],
     typeSpeed: 40,
   });
 
@@ -32,7 +32,7 @@ export default function HeroSection() {
     // { name: 'Express.js', icon: 'simple-icons:express' },
   ];
 
-  const titles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Freelancer", "Problem Solver"];
+  const titles = ["Full-Stack Developer", "from India", "Web Developer", "Programmer", "Frontend-Developer", "Backend-Developer", "Problem Solver"];
   const currentTitleIndex = useRef(0);
 
   const handleImageClick = () => {
